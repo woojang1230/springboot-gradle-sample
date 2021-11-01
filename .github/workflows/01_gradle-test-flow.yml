@@ -34,7 +34,7 @@ jobs:
       id: meta
       uses: crazy-max/ghaction-docker-meta@v1
       with:
-        images: woojang1230/app-push
+        images: woojang1230/push-test
         tags: 2.0
 
     - name: Build and push Docker image

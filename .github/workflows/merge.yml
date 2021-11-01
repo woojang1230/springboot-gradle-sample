@@ -3,16 +3,13 @@ name: Receive PR
 # read-only repo token
 # no access to secrets
 on:
-  pull_request_target:
+  push:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:        
-#       - uses: actions/checkout@v2
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
       - name: print User Name
         run: echo ${{ secrets.DOCKER_HUB_USERNAME }}
       - name: print Dir 1
@@ -32,7 +29,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      - name: docker build & tag
-        run: docker build -t woojang1230/github-action-test:1.0 . && docker tag woojang1230/github-action-test:1.0 woojang1230/github-action-test:latest
+      - name: docker build
+        run: docker build -t woojang1230/github-action-test:3.0 .
       - name: docker push
-        run: docker push woojang1230/github-action-test:1.0 && docker push woojang1230/github-action-test:latest
+        run: docker push woojang1230/github-action-test:3.0

@@ -43,5 +43,4 @@ jobs:
         image: woojang1230/github-action-test
         tags: 1.0, latest
         registry: docker.io
-        dockerfile: ./Dockerfile
         

@@ -1,0 +1,25 @@
+name: Comment on the pull request
+
+# read-write repo token
+# access to secrets
+on:
+  workflow_run:
+    workflows: ["Receive PR"]
+    types:
+      - completed
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    if: >
+      ${{ github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: print User Name
+        run: echo ${{ secrets.DOCKER_HUB_USERNAME }}
+      - name: Directory print
+        run: ls -la
+      - name: Docker relogin
+        run: docker login

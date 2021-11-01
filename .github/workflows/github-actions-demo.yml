@@ -43,5 +43,6 @@ jobs:
         file: ./Dockerfile
         platforms: linux/amd64
         push: true
+        image: woojang1230/github-action-test
         tags: 1.0
-        labels: woojang1230/github-action-test
+        

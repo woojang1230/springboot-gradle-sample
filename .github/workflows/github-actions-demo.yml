@@ -43,5 +43,5 @@ jobs:
         file: ./Dockerfile
         platforms: linux/amd64
         push: true
-        tags: ${{ steps.meta.with.tags }}
-        labels: ${{ steps.meta.with.images }}
+        tags: 1.0
+        labels: woojang1230/github-action-test

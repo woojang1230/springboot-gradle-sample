@@ -23,6 +23,6 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: docker build & tag
-        run: docker build -t woojang1230/github-action-test:1.0 && docker tag woojang1230/github-action-test:1.0 woojang1230/github-action-test:latest
+        run: docker build -t woojang1230/github-action-test:1.0 . && docker tag woojang1230/github-action-test:1.0 woojang1230/github-action-test:latest
       - name: docker push
         run: docker push woojang1230/github-action-test:1.0 && docker push woojang1230/github-action-test:latest

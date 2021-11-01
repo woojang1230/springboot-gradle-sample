@@ -9,4 +9,3 @@ SpringBoot Project With Gradle Sample
 
 sd
 11s
-a

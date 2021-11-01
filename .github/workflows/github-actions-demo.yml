@@ -39,7 +39,6 @@ jobs:
     - name: Build and push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5 # bdocker/build-push-action@v2
       with:
-        push: true
         image: woojang1230/github-action-test
         tags: 1.0, latest
         registry: docker.io

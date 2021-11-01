@@ -9,11 +9,12 @@ on:
 
 jobs:
   build:
-    env: 
-      USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
     runs-on: ubuntu-latest
     steps:
-    - run: echo "$env:USERNAME"
+    - name: env-test
+      env:
+        USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+      run: echo "$env:USERNAME"
     - run: echo ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
     - name: Check out the repo
       uses: actions/checkout@v2

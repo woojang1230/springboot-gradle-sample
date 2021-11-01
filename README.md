@@ -7,6 +7,6 @@ SpringBoot Project With Gradle Sample
 1
 1
 1
-s
+sd
 1
 a

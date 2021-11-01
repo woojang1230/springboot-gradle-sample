@@ -11,14 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Set up secret file
-      env:
-        DEBUG_DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-        DEBUG_DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      run: |
-        echo $DEBUG_DOCKER_HUB_USERNAME
-        echo $DEBUG_DOCKER_HUB_ACCESS_TOKEN
-        
+    - run: echo ${{ secrets.DOCKER_HUB_USERNAME }}
+    - run: echo ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
     - name: Check out the repo
       uses: actions/checkout@v2
         

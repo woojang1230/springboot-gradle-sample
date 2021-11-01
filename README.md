@@ -7,7 +7,7 @@ SpringBoot Project With Gradle Sample
 1
 1
 d
-s
+sa
 1
 a
 xxxsa

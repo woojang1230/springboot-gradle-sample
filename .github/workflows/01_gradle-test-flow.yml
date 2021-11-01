@@ -11,6 +11,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: secrets
+      env:
+        TWINE_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+      run: |
+        echo USERNAME: '${TWINE_PASSWORD}'
     - run: echo ${{ secrets.DOCKER_HUB_USERNAME }}
     - run: echo ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
     - name: Check out the repo

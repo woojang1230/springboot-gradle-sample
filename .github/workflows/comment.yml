@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
+      - name: print User Name
+        run: ${{ secrets.DOCKER_HUB_USERNAME }}
       - name: Directory print
         run: ls -la
       - name: Docker relogin

@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:        
       - uses: actions/checkout@v2
-
+      - name: print User Name
+        run: echo ${{ secrets.DOCKER_HUB_USERNAME }}
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
